@@ -10,12 +10,12 @@ public class ToiduaineController {
     //localhost:8080/tere/M
     List<String> toiduained = new ArrayList<>();//immiteerime andmebaasi
 
-    @GetMapping("saa-Toiduained")
+    @GetMapping("toiduained")
     public List<String> saaToiduained(){
         return toiduained;
     }
     //postmapping ei saa browseris teha
-    @PostMapping("toiduained")
+    @PostMapping("toiduained/{toiduaine}")
     public List<String> lisaToiduained(@PathVariable String toiduaine){
         toiduained.add(toiduaine);
         return toiduained;
@@ -27,7 +27,7 @@ public class ToiduaineController {
         return toiduained;
     }
 
-    @PutMapping("toiduained/{index}")
+    @PutMapping("toiduained/{index}/{newValue}")
     public List<String> muudaToiduained(@PathVariable int index, @PathVariable String newValue ){
         toiduained.set(index, newValue);
         return toiduained;
