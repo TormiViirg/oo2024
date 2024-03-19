@@ -32,12 +32,27 @@ public class ToiduaineEntityController {
             @PathVariable int valk,
             @PathVariable int rasv,
             @PathVariable int sysivesik
+            //url api end pointi
+            // automaagika kui see pikem jama varjant ei pea pikka kirjutama
+            //kasuta läbivalt ühte projektis
+            //postman tunnetab ära kui request param saad linnukestega valida
             ) {
         if (valk + rasv+ sysivesik > 100){
             return toiduained;
         }
         ToiduaineEntity toiduaine = new ToiduaineEntity(nimi, valk, rasv, sysivesik);
         toiduained.add(toiduaine);
+        return toiduained;
+    }
+//objekti sees kutusd punktiga
+    //kõige tavalisem post put requestide puhul eelista seda
+    @PostMapping("toiduained")
+    public List<ToiduaineEntity> lisaToiduained(@RequestBody ToiduaineEntity toiduaineEntity) {
+        if (toiduaineEntity.valk + toiduaineEntity.rasv+ toiduaineEntity.sysivesik > 100){
+            return toiduained;
+        }
+        //ToiduaineEntity toiduaine = new ToiduaineEntity(nimi, valk, rasv, sysivesik);
+        toiduained.add(toiduaineEntity);
         return toiduained;
     }
 

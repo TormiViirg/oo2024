@@ -35,7 +35,6 @@ public class ToiduaineController {
     //CRUD create read(kõiki ühte kindlat) update delete
     @GetMapping("toiduained/{index}")
     public String saaYksToiduaine(@PathVariable int index) {
-        toiduained.get(index);
         return toiduained.get(index);
     }
     /*@GetMapping("tere/{nimi}")
