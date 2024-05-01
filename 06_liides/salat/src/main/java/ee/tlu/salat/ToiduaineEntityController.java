@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:3000")
 
 //localhost:8080/api/toiduained/Vorst/23/45/14
 //localhost:8080/api/toiduained?/index=0Vorst/23/45/14

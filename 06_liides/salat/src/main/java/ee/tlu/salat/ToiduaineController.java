@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class ToiduaineController {
     //localhost:8080/tere/M
     List<String> toiduained = new ArrayList<>();//immiteerime andmebaasi
